@@ -6,9 +6,9 @@ module Canard
 
   def self.ability_key(class_name)
     klass_name = String(class_name)
-    klass_name.gsub!('::', '')
-    klass_name.gsub!(/(.)([A-Z])/,'\1_\2')
-    klass_name.downcase!
+    klass_name = klass_name.gsub('::', '')
+    klass_name = klass_name.gsub(/(.)([A-Z])/,'\1_\2')
+    klass_name = klass_name.downcase
     klass_name.to_sym
   end
 
